@@ -24,15 +24,15 @@ public class GuestService {
         return guest.orElse(null);
     }
 
-    public Guest updateGuest(Long guestId, Guest guestDetailes){
+    public Guest updateGuest(Long guestId, Guest guestDetails){
         Guest guest = getGuestById(guestId);
         if(guest !=null){
-            guest.setFirstName(guestDetailes.getFirstName());
-            guest.setLastName(guestDetailes.getLastName());
-            guest.setEmail(guestDetailes.getEmail());
-            guest.setPhone(guestDetailes.getPhone());
-            guest.setAddress(guestDetailes.getAddress());
-            guest.setDateOfBirth(guestDetailes.getDateOfBirth());
+            guest.setFirstName(guestDetails.getFirstName());
+            guest.setLastName(guestDetails.getLastName());
+            guest.setEmail(guestDetails.getEmail());
+            guest.setPhone(guestDetails.getPhone());
+            guest.setAddress(guestDetails.getAddress());
+            guest.setDateOfBirth(guestDetails.getDateOfBirth());
             return guestRepository.save(guest);
         }
         return null;

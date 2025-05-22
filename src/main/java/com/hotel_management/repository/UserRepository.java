@@ -1,6 +1,5 @@
 package com.hotel_management.repository;
 
-import com.hotel_management.dto.UserRegistrationDTO;
 import com.hotel_management.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
