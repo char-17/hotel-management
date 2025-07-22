@@ -1,9 +1,9 @@
 package com.hotel_management.service;
 
+import com.hotel_management.model.Reservation;
 import com.hotel_management.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.hotel_management.entity.Reservation;
 
 import java.util.List;
 import java.util.Optional;

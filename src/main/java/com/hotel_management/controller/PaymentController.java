@@ -1,10 +1,10 @@
 package com.hotel_management.controller;
 
-import com.hotel_management.entity.Payment;
+import com.hotel_management.model.Payment;
 import com.hotel_management.service.PaymentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

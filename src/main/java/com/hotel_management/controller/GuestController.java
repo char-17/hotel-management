@@ -1,9 +1,9 @@
 package com.hotel_management.controller;
 
-import com.hotel_management.entity.User;
-import com.hotel_management.entity.enums.UserRole;
-import com.hotel_management.repository.UserRepository;
 import com.hotel_management.exceptions.MyResourceNotFoundException;
+import com.hotel_management.model.User;
+import com.hotel_management.model.enums.UserRole;
+import com.hotel_management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,5 +1,4 @@
-package com.hotel_management.entity;
-
+package com.hotel_management.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,24 +6,24 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Employee {
+public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employeeId;
+    private Long guestID;
 
     private String firstName;
     private String lastName;
-    private String role;
     private String email;
     private String phone;
-    private String salary;
+    private String address;
+    private String dateOfBirth;
 
-    public Long getEmployeeId() {
-        return employeeId;
+    public Long getGuestID() {
+        return guestID;
     }
 
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
+    public void setGuestID(Long guestID) {
+        this.guestID = guestID;
     }
 
     public String getFirstName() {
@@ -43,14 +42,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -67,11 +58,19 @@ public class Employee {
         this.phone = phone;
     }
 
-    public String getSalary() {
-        return salary;
+    public String getAddress() {
+        return address;
     }
 
-    public void setSalary(String salary) {
-        this.salary = salary;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

@@ -1,10 +1,10 @@
 package com.hotel_management.controller;
 
-import com.hotel_management.entity.Room;
+import com.hotel_management.model.Room;
+import com.hotel_management.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.hotel_management.service.RoomService;
 
 import java.util.List;
 
@@ -19,7 +19,10 @@ public class RoomController {
     @PostMapping
     public ResponseEntity<Room> createRoom(@RequestBody Room room) {
         Room createdRoom = roomService.createRoom(room);
-        return ResponseEntity.ok(createdRoom);
+        if(createdRoom != null) {
+            return ResponseEntity.ok(createdRoom);
+        }
+        else return ResponseEntity.badRequest().build();
     }
 
     @GetMapping("/{roomId}")
@@ -43,6 +46,18 @@ public class RoomController {
     @GetMapping
     public ResponseEntity<List<Room>> listRooms() {
         List<Room> rooms = roomService.listRooms();
-        return ResponseEntity.ok(rooms);
+        if (rooms != null) {
+
+            for(Room room : rooms) {
+                System.out.println("Rooms" + room);
+                return ResponseEntity.ok(rooms);
+            }
+        }
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.notFound().build();
+
     }
 }

@@ -1,7 +1,7 @@
 package com.hotel_management.service;
 
 
-import com.hotel_management.entity.Guest;
+import com.hotel_management.model.Guest;
 import com.hotel_management.repository.GuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

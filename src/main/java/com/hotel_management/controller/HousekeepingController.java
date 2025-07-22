@@ -1,6 +1,6 @@
 package com.hotel_management.controller;
 
-import com.hotel_management.entity.Housekeeping;
+import com.hotel_management.model.Housekeeping;
 import com.hotel_management.service.HousekeepingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

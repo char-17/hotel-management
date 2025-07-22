@@ -1,4 +1,4 @@
-package com.hotel_management.entity;
+package com.hotel_management.model;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.hotel_management.entity.enums;
+package com.hotel_management.model.enums;
 
 public enum UserRole {
     ADMIN(1),

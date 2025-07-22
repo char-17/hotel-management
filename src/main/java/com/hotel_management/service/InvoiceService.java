@@ -1,6 +1,6 @@
 package com.hotel_management.service;
 
-import com.hotel_management.entity.Invoice;
+import com.hotel_management.model.Invoice;
 import com.hotel_management.repository.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

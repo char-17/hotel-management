@@ -1,13 +1,13 @@
 package com.hotel_management.service;
 
-import com.hotel_management.entity.Booking;
-import com.hotel_management.entity.Room;
-import com.hotel_management.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.hotel_management.model.Booking;
+import com.hotel_management.model.Room;
+import com.hotel_management.model.User;
 import com.hotel_management.repository.BookingRepository;
 import com.hotel_management.repository.RoomRepository;
 import com.hotel_management.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

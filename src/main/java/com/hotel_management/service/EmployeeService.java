@@ -1,6 +1,6 @@
 package com.hotel_management.service;
 
-import com.hotel_management.entity.Employee;
+import com.hotel_management.model.Employee;
 import com.hotel_management.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

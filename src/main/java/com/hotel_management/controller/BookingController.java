@@ -1,9 +1,9 @@
 package com.hotel_management.controller;
 
+import com.hotel_management.model.Booking;
+import com.hotel_management.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.hotel_management.service.BookingService;
-import com.hotel_management.entity.Booking;
 
 import java.util.List;
 

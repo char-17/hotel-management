@@ -2,8 +2,8 @@ package com.hotel_management.controller;
 
 import com.hotel_management.dto.LoginRequestDTO;
 import com.hotel_management.dto.LoginResponseDTO;
-import com.hotel_management.dto.UserRegistrationDTO;
-import com.hotel_management.entity.User;
+import com.hotel_management.dto.UserRegisterRequestDTO;
+import com.hotel_management.dto.UserRegisterResponseDTO;
 import com.hotel_management.service.LoginService;
 import com.hotel_management.service.RegistrationService;
 import org.springframework.http.ResponseEntity;
@@ -24,27 +24,51 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserRegistrationDTO> registerUser(@RequestBody UserRegistrationDTO registrationDTO) {
-        Boolean user = userRegistrationService.checkIfUsernameExist(registrationDTO);
+    public ResponseEntity<UserRegisterResponseDTO> registerUser(@RequestBody UserRegisterRequestDTO request) {
 
-        if (!user) {
-            User newuser = userRegistrationService.registerNewUser(registrationDTO);
-            registrationDTO.setRegistrationErrorMessage("Registered Successfully");
-        } else {
+        UserRegisterResponseDTO response = new UserRegisterResponseDTO();
 
-            registrationDTO.setRole(null);
-            registrationDTO.setUsername(null);
-            registrationDTO.setPassword(null);
-            registrationDTO.setEmail(null);
-            registrationDTO.setRegistrationErrorMessage("Username already exists in the system choose another one!");
-            return ResponseEntity.ok(registrationDTO);
+        Boolean userExists  = userRegistrationService.checkIfUsernameExist(request);
+
+        if (!userExists && !request.isEmpty()  ) {
+            userRegistrationService.registerNewUser(request);
+
+            response.setUsername(request.getUsername());
+            response.setFirstName(request.getFirstName());
+            response.setLastName(request.getLastName());
+            response.setEmail(request.getEmail());
+            response.setPassword(request.getPassword());
+            response.setRole(request.getRole());
+            response.setDateOfBirth(request.getDateOfBirth());
+            response.setGender(request.getGender());
+            response.setRegistrationErrorMessage("Registration Successfully!");    }
+        else if (request.isEmpty())
+
+        {
+            response.setRegistrationErrorMessage("Username already exists in the system choose another one!");
+            return null;
         }
-        return ResponseEntity.ok(registrationDTO);
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping("/login")
-    public LoginResponseDTO login(@RequestBody LoginRequestDTO loginDTO) {
-        return loginService.login(loginDTO);
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginDTO) {
+        LoginResponseDTO  response = new LoginResponseDTO();
+         response = loginService.login(loginDTO);
+//        System.out.println(userExists);
+
+//        if(userExists)
+//        {
+//            response.setLoginStatus(true);
+//            response.setLoginMessage("success");
+//        }
+//        else{
+//            response.setLoginStatus(false);
+//            response.setLoginMessage("failed");
+//        }
+        return ResponseEntity.ok(response);
+
+
     }
 }
 

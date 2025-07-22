@@ -1,7 +1,7 @@
 package com.hotel_management.controller;
 
 
-import com.hotel_management.entity.Reservation;
+import com.hotel_management.model.Reservation;
 import com.hotel_management.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
