@@ -1,4 +1,4 @@
-package com.hotel_management.dto;
+package com.hotel_management.dtoRequestResponse;
 
 public class AuthResponse {
     private String jwt;

@@ -1,7 +1,7 @@
 package com.hotel_management.service;
 
-import com.hotel_management.dto.LoginRequestDTO;
-import com.hotel_management.dto.LoginResponseDTO;
+import com.hotel_management.dtoRequestResponse.LoginRequestDTO;
+import com.hotel_management.dtoRequestResponse.LoginResponseDTO;
 import com.hotel_management.model.User;
 import com.hotel_management.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class LoginService {
             // An vrikame ton xristi
             if (passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) {
                 response.setUsername(user.getUsername());
-                response.setPassword(user.getPassword());
+                response.setPassword("found");
                 response.setLoginStatus(true);
                 return response;
             }

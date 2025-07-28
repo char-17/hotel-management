@@ -1,6 +1,6 @@
 package com.hotel_management.service;
 
-import com.hotel_management.dto.UserRegisterRequestDTO;
+import com.hotel_management.dtoRequestResponse.UserRegisterRequestDTO;
 import com.hotel_management.model.User;
 import com.hotel_management.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;

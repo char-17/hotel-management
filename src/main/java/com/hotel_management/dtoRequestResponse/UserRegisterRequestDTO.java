@@ -1,4 +1,4 @@
-package com.hotel_management.dto;
+package com.hotel_management.dtoRequestResponse;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

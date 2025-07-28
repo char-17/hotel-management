@@ -1,9 +1,8 @@
-package com.hotel_management.dto;
+package com.hotel_management.dtoRequestResponse;
 
-public class LoginResponseDTO {
+public class AuthRequest {
     private String username;
     private String password;
-    private boolean loginStatus;
 
     public String getUsername() {
         return username;
@@ -19,13 +18,5 @@ public class LoginResponseDTO {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isLoginStatus() {
-        return loginStatus;
-    }
-
-    public void setLoginStatus(boolean loginStatus) {
-        this.loginStatus = loginStatus;
     }
 }

@@ -1,9 +1,9 @@
 package com.hotel_management.controller;
 
-import com.hotel_management.dto.LoginRequestDTO;
-import com.hotel_management.dto.LoginResponseDTO;
-import com.hotel_management.dto.UserRegisterRequestDTO;
-import com.hotel_management.dto.UserRegisterResponseDTO;
+import com.hotel_management.dtoRequestResponse.LoginRequestDTO;
+import com.hotel_management.dtoRequestResponse.LoginResponseDTO;
+import com.hotel_management.dtoRequestResponse.UserRegisterRequestDTO;
+import com.hotel_management.dtoRequestResponse.UserRegisterResponseDTO;
 import com.hotel_management.service.LoginService;
 import com.hotel_management.service.RegistrationService;
 import org.springframework.http.ResponseEntity;
@@ -28,9 +28,9 @@ public class AuthController {
 
         UserRegisterResponseDTO response = new UserRegisterResponseDTO();
 
-        Boolean userExists  = userRegistrationService.checkIfUsernameExist(request);
+        Boolean userExists = userRegistrationService.checkIfUsernameExist(request);
 
-        if (!userExists && !request.isEmpty()  ) {
+        if (!userExists && !request.isEmpty()) {
             userRegistrationService.registerNewUser(request);
 
             response.setUsername(request.getUsername());
@@ -41,10 +41,8 @@ public class AuthController {
             response.setRole(request.getRole());
             response.setDateOfBirth(request.getDateOfBirth());
             response.setGender(request.getGender());
-            response.setRegistrationErrorMessage("Registration Successfully!");    }
-        else if (request.isEmpty())
-
-        {
+            response.setRegistrationErrorMessage("Registration Successfully!");
+        } else if (request.isEmpty()) {
             response.setRegistrationErrorMessage("Username already exists in the system choose another one!");
             return null;
         }
@@ -53,19 +51,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginDTO) {
-        LoginResponseDTO  response = new LoginResponseDTO();
-         response = loginService.login(loginDTO);
-//        System.out.println(userExists);
-
-//        if(userExists)
-//        {
-//            response.setLoginStatus(true);
-//            response.setLoginMessage("success");
-//        }
-//        else{
-//            response.setLoginStatus(false);
-//            response.setLoginMessage("failed");
-//        }
+        LoginResponseDTO response = new LoginResponseDTO();
+        response = loginService.login(loginDTO);
         return ResponseEntity.ok(response);
 
 
